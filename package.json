@@ -10,10 +10,12 @@
     "expo": "^32.0.0",
     "native-base": "^2.12.1",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-svg": "^9.4.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
   },
-  "private": true
+  "private": true,
+  "cleanRNSVG": "find ./node_modules -type d -mindepth 2 -name react-native-svg -exec rm -rf {} \\;"
 }
