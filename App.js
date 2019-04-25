@@ -13,6 +13,15 @@ import {
   Card,
   CardItem,
 } from 'native-base';
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart,
+} from 'react-native-chart-kit';
+import { Svg } from 'expo';
 
 export default class HeaderExample extends Component {
   render() {
@@ -25,13 +34,8 @@ export default class HeaderExample extends Component {
             </Button>
           </Left>
           <Body>
-            <Title transparent>Header</Title>
+            <Title transparent />
           </Body>
-          <Right>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Right>
         </Header>
         <Content>
           <Container
@@ -76,7 +80,7 @@ export default class HeaderExample extends Component {
                   paddingTop: 0,
                 }}
               >
-                Tue, April 22, 2019
+                Thr, April 25, 2019
               </Text>
               <Container
                 style={{
@@ -114,7 +118,7 @@ export default class HeaderExample extends Component {
                           fontSize: 25,
                         }}
                       >
-                        $4,349
+                        $3,349
                       </Text>
                     </CardItem>
                   </Content>
@@ -132,7 +136,7 @@ export default class HeaderExample extends Component {
                             fontSize: 25,
                           }}
                         >
-                          $3,345
+                          $2,190
                         </Text>
                       </Body>
                     </CardItem>
@@ -142,6 +146,59 @@ export default class HeaderExample extends Component {
             </Container>
           </Container>
         </Content>
+        <Container
+          style={{
+            marginLeft: 7,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 30,
+              marginLeft: 20,
+              paddingRight: 10,
+              color: '#9377DE',
+            }}
+          >
+            Stats
+            <Text
+              style={{
+                fontSize: 13,
+                color: '#9377DE',
+              }}
+            >
+              {'   '}since last pay period
+            </Text>
+          </Text>
+          <LineChart
+            data={{
+              labels: ['3/22', '3/26', '3/29', '4/2', '4/15'],
+              datasets: [
+                {
+                  data: [3349, 2000, 2200, 1400, 1600, 1159],
+                },
+              ],
+            }}
+            width={400}
+            height={220}
+            yAxisLabel={'$'}
+            fromZero={'True'}
+            withDots={'True'}
+            chartConfig={{
+              backgroundGradientFrom: '#fff',
+              backgroundGradientTo: '#fff',
+              decimalPlaces: 'none',
+              color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+              style: {
+                borderRadius: 16,
+              },
+            }}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 16,
+            }}
+          />
+        </Container>
       </Container>
     );
   }
