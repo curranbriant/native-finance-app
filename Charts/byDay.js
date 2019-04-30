@@ -53,31 +53,40 @@ export default class ByDay extends Component {
                     height: 500,
                   }}
                 >
-                  <Text
-                    style={{
-                      fontSize: 30,
-                      marginLeft: 20,
-                      paddingRight: 10,
-                      color: '#9377DE',
-                    }}
-                  >
-                    Stats
+                  <ScrollView>
                     <Text
                       style={{
-                        fontSize: 13,
+                        fontSize: 30,
+                        marginLeft: 20,
+                        paddingRight: 10,
                         color: '#9377DE',
                       }}
                     >
-                      {'   '}since last pay period
+                      Stats
+                      <Text
+                        style={{
+                          fontSize: 13,
+                          color: '#9377DE',
+                        }}
+                      >
+                        {'   '}since last pay period
+                      </Text>
                     </Text>
-                  </Text>
-                  <ScrollView horizontal={true}>
+
                     <LineChart
                       data={{
-                        labels: ['3/22', '3/29', '4/5', '4/12', '4/19'],
+                        labels: [
+                          '3/22',
+                          '3/24',
+                          '3/25',
+                          '3/26',
+                          '3/27',
+                          '3/28',
+                          '3/29',
+                        ],
                         datasets: [
                           {
-                            data: [4329, 3000, 2114, 1830, 1630, 859],
+                            data: [141, 83, 35, 87, 45, 101],
                           },
                         ],
                       }}
@@ -110,10 +119,18 @@ export default class ByDay extends Component {
                     />
                     <BarChart
                       data={{
-                        labels: ['3/22', '3/29', '4/5', '4/12', '4/19'],
+                        labels: [
+                          '3/22',
+                          '3/24',
+                          '3/25',
+                          '3/26',
+                          '3/27',
+                          '3/28',
+                          '3/29',
+                        ],
                         datasets: [
                           {
-                            data: [1329, 200, 800, 200, 359, 898],
+                            data: [141, 83, 35, 87, 45, 101],
                           },
                         ],
                       }}
@@ -143,35 +160,35 @@ export default class ByDay extends Component {
                       data={[
                         {
                           name: '3/22',
-                          population: 1329,
+                          population: 141,
                           color: 'rgba(131, 167, 234, 1)',
                           legendFontColor: '#7F7F7F',
                           legendFontSize: 15,
                         },
                         {
-                          name: '3/29',
-                          population: 200,
+                          name: '3/23',
+                          population: 83,
                           color: '#F00',
                           legendFontColor: '#7F7F7F',
                           legendFontSize: 15,
                         },
                         {
-                          name: '4/5',
-                          population: 800,
+                          name: '3/24',
+                          population: 35,
                           color: 'red',
                           legendFontColor: '#7F7F7F',
                           legendFontSize: 15,
                         },
                         {
-                          name: '4/12',
-                          population: 200,
+                          name: '3/25',
+                          population: 84,
                           color: '#000',
                           legendFontColor: '#7F7F7F',
                           legendFontSize: 15,
                         },
                         {
-                          name: '4/19',
-                          population: 359,
+                          name: '3/26',
+                          population: 45,
                           color: 'rgb(0, 0, 255)',
                           legendFontColor: '#7F7F7F',
                           legendFontSize: 15,

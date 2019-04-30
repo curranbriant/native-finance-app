@@ -33,16 +33,6 @@ export default class AccountShow extends Component {
       <View style={{ flex: 1 }}>
         <ScrollView>
           <Container style={{}}>
-            <Header transparent>
-              <Left>
-                <Button transparent>
-                  <Icon name='arrow-back' />
-                </Button>
-              </Left>
-              <Body>
-                <Title transparent />
-              </Body>
-            </Header>
             <Content>
               <Container
                 style={{
@@ -91,7 +81,6 @@ export default class AccountShow extends Component {
                   </Text>
                 </Container>
               </Container>
-
               <StatsShow />
             </Content>
           </Container>

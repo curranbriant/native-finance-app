@@ -12,10 +12,10 @@ export default class StatsShow extends Component {
             <ByDay />
           </Tab>
           <Tab heading='Stats by week'>
-            <ByWeek />
+            <ByMonth />
           </Tab>
           <Tab heading='Stats by month'>
-            <ByMonth />
+            <ByWeek />
           </Tab>
         </Tabs>
       </Container>

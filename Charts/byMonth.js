@@ -29,7 +29,7 @@ import { Svg } from 'expo';
 import { group } from '/Users/briancurran/personalProjects/nativeProjects/bankApp/seed.json';
 const persons = group.account;
 
-export default class ByMonth extends Component {
+export default class ByDay extends Component {
   render() {
     return (
       <View
@@ -53,92 +53,154 @@ export default class ByMonth extends Component {
                     height: 500,
                   }}
                 >
-                  <Text
-                    style={{
-                      fontSize: 30,
-                      marginLeft: 20,
-                      paddingRight: 10,
-                      color: '#9377DE',
-                    }}
-                  >
-                    Stats
+                  <ScrollView>
                     <Text
                       style={{
-                        fontSize: 13,
+                        fontSize: 30,
+                        marginLeft: 20,
+                        paddingRight: 10,
                         color: '#9377DE',
                       }}
                     >
-                      {'   '}since last pay period
+                      Stats
+                      <Text
+                        style={{
+                          fontSize: 13,
+                          color: '#9377DE',
+                        }}
+                      >
+                        {'   '}amount spent by month
+                      </Text>
                     </Text>
-                  </Text>
-                  <LineChart
-                    data={{
-                      labels: ['3/22', '3/29', '4/5', '4/12', '4/19'],
-                      datasets: [
-                        {
-                          data: [4329, 3000, 2114, 1830, 1630, 859],
-                        },
-                      ],
-                    }}
-                    width={400}
-                    height={220}
-                    yAxisLabel={'$'}
-                    fromZero={'True'}
-                    withDots={'True'}
-                    chartConfig={{
-                      backgroundGradientFrom: '#fff',
-                      backgroundGradientTo: '#fff',
-                      decimalPlaces: 'none',
-                      color: (opacity = 1) => `rgba(0,
+
+                    <LineChart
+                      data={{
+                        labels: ['April', 'May', 'June', 'July', 'August'],
+                        datasets: [
+                          {
+                            data: [4567, 3094, 5674, 5005, 4893, 2200],
+                          },
+                        ],
+                      }}
+                      width={350}
+                      height={220}
+                      yAxisLabel={'$'}
+                      fromZero={'True'}
+                      withDots={false}
+                      withInnerLines={false}
+                      withOuterLines={false}
+                      chartConfig={{
+                        backgroundGradientFrom: '#fff',
+                        backgroundGradientTo: '#fff',
+                        decimalPlaces: 'none',
+
+                        strokeWidth: 5,
+                        color: (opacity = 1) => `rgba(0,
                                 0,
                                 0, ${opacity})`,
-                      style: {
-                        borderRadius: 16,
-                      },
-                    }}
-                    bezier
-                    style={{
-                      marginVertical: 8,
-                      borderRadius: 16,
-                    }}
-                  />
-                  <Text
-                    style={{
-                      fontSize: 13,
-                      color: '#9377DE',
-                    }}
-                  >
-                    {'   '}money spent by week
-                  </Text>
-                  <BarChart
-                    data={{
-                      labels: ['3/22', '3/29', '4/5', '4/12', '4/19'],
-                      datasets: [
-                        {
-                          data: [1329, 200, 800, 200, 359, 898],
+                        style: {
+                          borderRadius: 16,
                         },
-                      ],
-                    }}
-                    width={350}
-                    height={220}
-                    yAxisLabel={'$'}
-                    fromZero={'True'}
-                    chartConfig={{
-                      backgroundGradientFrom: '#fff',
-                      backgroundGradientTo: '#fff',
-                      decimalPlaces: 'none',
-                      color: (opacity = 1) => `rgba(0,
+                      }}
+                      bezier
+                      withOuterLines={'False'}
+                      style={{
+                        marginVertical: 3,
+                        borderRadius: 16,
+                      }}
+                    />
+                    <BarChart
+                      data={{
+                        labels: ['April', 'May', 'June', 'July', 'August'],
+                        datasets: [
+                          {
+                            data: [4567, 3094, 5674, 5005, 4893, 2200],
+                          },
+                        ],
+                      }}
+                      width={350}
+                      height={220}
+                      yAxisLabel={'$'}
+                      fromZero={'True'}
+                      withInnerLines={false}
+                      withOuterLines={false}
+                      chartConfig={{
+                        backgroundGradientFrom: '#fff',
+                        backgroundGradientTo: '#fff',
+                        decimalPlaces: 'none',
+                        color: (opacity = 1) => `rgba(0,
                                 0,
                                 0, ${opacity})`,
-                      style: {
+                        style: {
+                          borderRadius: 16,
+                        },
+                      }}
+                      style={{
+                        marginVertical: 3,
                         borderRadius: 16,
-                      },
-                    }}
-                    style={{
-                      marginVertical: 8,
-                      borderRadius: 16,
-                    }}
-                  />
+                      }}
+                    />
+                    <PieChart
+                      data={[
+                        {
+                          name: 'April',
+                          population: 4567,
+                          color: 'rgba(131, 167, 234, 1)',
+                          legendFontColor: '#7F7F7F',
+                          legendFontSize: 15,
+                        },
+                        {
+                          name: 'May',
+                          population: 3094,
+                          color: '#F00',
+                          legendFontColor: '#7F7F7F',
+                          legendFontSize: 15,
+                        },
+                        {
+                          name: 'June',
+                          population: 5674,
+                          color: 'red',
+                          legendFontColor: '#7F7F7F',
+                          legendFontSize: 15,
+                        },
+                        {
+                          name: 'July',
+                          population: 5005,
+                          color: '#000',
+                          legendFontColor: '#7F7F7F',
+                          legendFontSize: 15,
+                        },
+                        {
+                          name: 'August',
+                          population: 2200,
+                          color: 'rgb(0, 0, 255)',
+                          legendFontColor: '#7F7F7F',
+                          legendFontSize: 15,
+                        },
+                      ]}
+                      width={350}
+                      height={220}
+                      yAxisLabel={'$'}
+                      fromZero={'True'}
+                      backgroundColor={'transparent'}
+                      chartConfig={{
+                        backgroundGradientFrom: '#fff',
+                        backgroundGradientTo: '#fff',
+                        decimalPlaces: 'none',
+                        color: (opacity = 1) => `rgba(0,
+                                0,
+                                0, ${opacity})`,
+                        style: {
+                          borderRadius: 16,
+                        },
+                      }}
+                      accessor='population'
+                      style={{
+                        borderRadius: 16,
+                        marginLeft: 30,
+                      }}
+                    />
+                  </ScrollView>
                 </Container>
               </Container>
             </Content>
